@@ -3,6 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Gawkbox = /** @class */ (function () {
     function Gawkbox() {
     }
+    Gawkbox.prototype.setWrapper = function (wrapper) {
+        this.platformWrapper = wrapper;
+    };
     Gawkbox.prototype.gameLoaded = function () {
         return;
     };
@@ -13,7 +16,7 @@ var Gawkbox = /** @class */ (function () {
         window.postMessage(JSON.stringify({
             event: 'stop',
             score: score
-        }), "*");
+        }), '*');
     };
     Gawkbox.prototype.gamePaused = function () {
         return;

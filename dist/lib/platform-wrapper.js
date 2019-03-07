@@ -17,6 +17,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
+var gawkbox_1 = require("./Platforms/gawkbox");
+exports.Gawkbox = gawkbox_1.Gawkbox;
 var PlatformWrapper = /** @class */ (function (_super) {
     __extends(PlatformWrapper, _super);
     function PlatformWrapper() {
@@ -30,8 +32,10 @@ var PlatformWrapper = /** @class */ (function (_super) {
      * @param platform
      */
     PlatformWrapper.prototype.setPlatform = function (platform) {
-        this.platform = platform;
-        this.platform.setManager(this);
+        if (platform) {
+            this.platform = platform;
+            this.platform.setWrapper(this);
+        }
     };
     PlatformWrapper.prototype.gameLoaded = function () {
         var args = [];

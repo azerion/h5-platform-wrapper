@@ -12,8 +12,10 @@ export class PlatformWrapper extends EventEmitter {
      * @param platform
      */
     public setPlatform(platform: any): void {
-        this.platform = platform
-        this.platform.setWrapper(this)
+        if (platform) {
+            this.platform = platform
+            this.platform.setWrapper(this)
+        }
     }
 
     public gameLoaded(...args: any[]): void {

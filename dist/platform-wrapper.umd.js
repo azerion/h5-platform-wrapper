@@ -1,5 +1,3 @@
-
-(function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -393,7 +391,7 @@
             window.postMessage(JSON.stringify({
                 event: 'stop',
                 score: score
-            }), "*");
+            }), '*');
         };
         Gawkbox.prototype.gamePaused = function () {
             return;
@@ -417,8 +415,10 @@
          * @param platform
          */
         PlatformWrapper.prototype.setPlatform = function (platform) {
-            this.platform = platform;
-            this.platform.setWrapper(this);
+            if (platform) {
+                this.platform = platform;
+                this.platform.setWrapper(this);
+            }
         };
         PlatformWrapper.prototype.gameLoaded = function () {
             var args = [];

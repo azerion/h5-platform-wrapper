@@ -16,3 +16,4 @@ export declare class PlatformWrapper extends EventEmitter {
     gameResumed(...args: any[]): void;
 }
 export declare const platform: PlatformWrapper;
+export as namespace azsdk;

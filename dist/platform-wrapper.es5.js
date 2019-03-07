@@ -1,5 +1,3 @@
-
-(function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -387,7 +385,7 @@ var Gawkbox = /** @class */ (function () {
         window.postMessage(JSON.stringify({
             event: 'stop',
             score: score
-        }), "*");
+        }), '*');
     };
     Gawkbox.prototype.gamePaused = function () {
         return;
@@ -411,8 +409,10 @@ var PlatformWrapper = /** @class */ (function (_super) {
      * @param platform
      */
     PlatformWrapper.prototype.setPlatform = function (platform) {
-        this.platform = platform;
-        this.platform.setWrapper(this);
+        if (platform) {
+            this.platform = platform;
+            this.platform.setWrapper(this);
+        }
     };
     PlatformWrapper.prototype.gameLoaded = function () {
         var args = [];
