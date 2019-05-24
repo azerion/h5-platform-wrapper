@@ -46,7 +46,7 @@ export class PlatformWrapper extends EventEmitter {
         this.platform.gameEnded.apply(this.platform, args)
 
         if (score) {
-            this.scoreUpdate(score)
+            this.sendScore(score)
         }
     }
 
@@ -68,13 +68,13 @@ export class PlatformWrapper extends EventEmitter {
         this.platform.gameResumed.apply(this.platform, args)
     }
 
-    private scoreUpdate(score: number): void {
+    public sendScore(score: number): void {
         if (null === this.platform) {
             //Silently return for when no platform is set
             return
         }
 
-        this.platform.scoreUpdate.apply(this.platform, score)
+        this.platform.sendScore.apply(this.platform, score)
     }
 }
 

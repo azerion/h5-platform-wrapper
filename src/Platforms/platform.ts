@@ -7,5 +7,5 @@ export interface Platform {
     gameEnded(fail: boolean, score?: number, level?: number | string): void
     gamePaused(): void
     gameResumed(): void
-    scoreUpdate(): void
+    sendScore(): void
 }

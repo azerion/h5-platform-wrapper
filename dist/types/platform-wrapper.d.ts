@@ -14,6 +14,6 @@ export declare class PlatformWrapper extends EventEmitter {
     gameEnded(fail: boolean, score?: number, level?: number | string, ...args: any[]): void;
     gamePaused(...args: any[]): void;
     gameResumed(...args: any[]): void;
+    sendScore(score: number): void;
 }
 export declare const platform: PlatformWrapper;
-export as namespace azsdk;
