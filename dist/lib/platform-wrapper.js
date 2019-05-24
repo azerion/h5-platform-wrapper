@@ -68,6 +68,9 @@ var PlatformWrapper = /** @class */ (function (_super) {
             throw new Error('Can not request an ad without an provider, please attach an ad provider!');
         }
         this.platform.gameEnded.apply(this.platform, args);
+        if (score) {
+            this.scoreUpdate(score);
+        }
     };
     PlatformWrapper.prototype.gamePaused = function () {
         var args = [];
@@ -90,6 +93,13 @@ var PlatformWrapper = /** @class */ (function (_super) {
             return;
         }
         this.platform.gameResumed.apply(this.platform, args);
+    };
+    PlatformWrapper.prototype.scoreUpdate = function (score) {
+        if (null === this.platform) {
+            //Silently return for when no platform is set
+            return;
+        }
+        this.platform.scoreUpdate.apply(this.platform, score);
     };
     return PlatformWrapper;
 }(eventemitter3_1.default));

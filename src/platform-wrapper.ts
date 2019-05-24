@@ -44,6 +44,10 @@ export class PlatformWrapper extends EventEmitter {
         }
 
         this.platform.gameEnded.apply(this.platform, args)
+
+        if (score) {
+            this.sendScore(score)
+        }
     }
 
     public gamePaused(...args: any[]): void {
@@ -62,6 +66,15 @@ export class PlatformWrapper extends EventEmitter {
         }
 
         this.platform.gameResumed.apply(this.platform, args)
+    }
+
+    public sendScore(score: number): void {
+        if (null === this.platform) {
+            //Silently return for when no platform is set
+            return
+        }
+
+        this.platform.sendScore.apply(this.platform, score)
     }
 }
 

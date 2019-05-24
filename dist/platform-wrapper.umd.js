@@ -1,3 +1,5 @@
+
+(function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -399,6 +401,9 @@
         Gawkbox.prototype.gameResumed = function () {
             return;
         };
+        Gawkbox.prototype.sendScore = function () {
+            return;
+        };
         return Gawkbox;
     }());
 
@@ -451,6 +456,9 @@
                 throw new Error('Can not request an ad without an provider, please attach an ad provider!');
             }
             this.platform.gameEnded.apply(this.platform, args);
+            if (score) {
+                this.sendScore(score);
+            }
         };
         PlatformWrapper.prototype.gamePaused = function () {
             var args = [];
@@ -473,6 +481,13 @@
                 return;
             }
             this.platform.gameResumed.apply(this.platform, args);
+        };
+        PlatformWrapper.prototype.sendScore = function (score) {
+            if (null === this.platform) {
+                //Silently return for when no platform is set
+                return;
+            }
+            this.platform.sendScore.apply(this.platform, score);
         };
         return PlatformWrapper;
     }(eventemitter3));

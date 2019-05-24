@@ -33,4 +33,8 @@ export class Gawkbox implements Platform {
     public gameResumed(): void {
         return
     }
+
+    public sendScore(): void {
+        return
+    }
 }
