@@ -69,7 +69,7 @@ var PlatformWrapper = /** @class */ (function (_super) {
         }
         this.platform.gameEnded.apply(this.platform, args);
         if (score) {
-            this.scoreUpdate(score);
+            this.sendScore(score);
         }
     };
     PlatformWrapper.prototype.gamePaused = function () {
@@ -94,12 +94,12 @@ var PlatformWrapper = /** @class */ (function (_super) {
         }
         this.platform.gameResumed.apply(this.platform, args);
     };
-    PlatformWrapper.prototype.scoreUpdate = function (score) {
+    PlatformWrapper.prototype.sendScore = function (score) {
         if (null === this.platform) {
             //Silently return for when no platform is set
             return;
         }
-        this.platform.scoreUpdate.apply(this.platform, score);
+        this.platform.sendScore.apply(this.platform, score);
     };
     return PlatformWrapper;
 }(eventemitter3_1.default));

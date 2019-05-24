@@ -24,7 +24,7 @@ var Gawkbox = /** @class */ (function () {
     Gawkbox.prototype.gameResumed = function () {
         return;
     };
-    Gawkbox.prototype.scoreUpdate = function () {
+    Gawkbox.prototype.sendScore = function () {
         return;
     };
     return Gawkbox;
