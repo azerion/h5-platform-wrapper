@@ -1,7 +1,7 @@
 {
     "name": "@azerion/h5-platform-wrapper",
     "author": "Azerion",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Wraps your common game platform API's in to one simple library.",
     "contributors": [
         {
