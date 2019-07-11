@@ -8,5 +8,5 @@ export declare class Gawkbox implements Platform {
     gameEnded(fail: boolean, score: number, level?: number | string): void;
     gamePaused(): void;
     gameResumed(): void;
-    sendScore(): void;
+    sendScore(score: number): void;
 }

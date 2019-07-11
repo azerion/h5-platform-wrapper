@@ -34,7 +34,7 @@ export class Gawkbox implements Platform {
         return
     }
 
-    public sendScore(): void {
+    public sendScore(score: number): void {
         return
     }
 }
