@@ -11,6 +11,7 @@ export declare class PlatformWrapper extends EventEmitter {
     setPlatform(platform: any): void;
     gameLoaded(...args: any[]): void;
     gameStarted(...args: any[]): void;
+    getGameSettings(...args: any[]): void;
     gameEnded(fail: boolean, score?: number, level?: number | string, ...args: any[]): void;
     gamePaused(...args: any[]): void;
     gameResumed(...args: any[]): void;

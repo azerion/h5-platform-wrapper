@@ -59,6 +59,17 @@ var PlatformWrapper = /** @class */ (function (_super) {
         }
         this.platform.gameStarted.apply(this.platform, args);
     };
+    PlatformWrapper.prototype.getGameSettings = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        if (null === this.platform) {
+            //Silently return for when no platform is set
+            return;
+        }
+        this.platform.getGameSettings.apply(this.platform, args);
+    };
     PlatformWrapper.prototype.gameEnded = function (fail, score, level) {
         var args = [];
         for (var _i = 3; _i < arguments.length; _i++) {
