@@ -36,7 +36,7 @@ export class PlatformWrapper extends EventEmitter {
         this.platform.gameStarted.apply(this.platform, args)
     }
 
-    public getGameSettings(...args: any[]): void {
+    public getGameSettings(...args: any[]): any {
         if (null === this.platform) {
             //Silently return for when no platform is set
             return

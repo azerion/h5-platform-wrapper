@@ -13,7 +13,7 @@ var Gawkbox = /** @class */ (function () {
         return;
     };
     Gawkbox.prototype.getGameSettings = function () {
-        return;
+        return null;
     };
     Gawkbox.prototype.gameEnded = function (fail, score, level) {
         window.postMessage(JSON.stringify({

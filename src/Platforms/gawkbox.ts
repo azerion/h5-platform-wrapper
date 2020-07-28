@@ -16,8 +16,8 @@ export class Gawkbox implements Platform {
         return
     }
 
-    public getGameSettings(): void {
-        return
+    public getGameSettings(): any {
+        return null
     }
 
     public gameEnded(fail: boolean, score: number, level?: number | string): void {
