@@ -7,4 +7,5 @@ export interface Platform {
     gamePaused(): void;
     gameResumed(): void;
     sendScore(score: number): void;
+    getGameSettings(): any;
 }

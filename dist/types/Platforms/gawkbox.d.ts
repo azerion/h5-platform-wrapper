@@ -5,6 +5,7 @@ export declare class Gawkbox implements Platform {
     setWrapper(wrapper: PlatformWrapper): void;
     gameLoaded(): void;
     gameStarted(): void;
+    getGameSettings(): any;
     gameEnded(fail: boolean, score: number, level?: number | string): void;
     gamePaused(): void;
     gameResumed(): void;

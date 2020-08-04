@@ -16,6 +16,10 @@ export class Gawkbox implements Platform {
         return
     }
 
+    public getGameSettings(): any {
+        return null
+    }
+
     public gameEnded(fail: boolean, score: number, level?: number | string): void {
         window.postMessage(
             JSON.stringify({

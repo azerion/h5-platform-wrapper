@@ -36,6 +36,15 @@ export class PlatformWrapper extends EventEmitter {
         this.platform.gameStarted.apply(this.platform, args)
     }
 
+    public getGameSettings(...args: any[]): any {
+        if (null === this.platform) {
+            //Silently return for when no platform is set
+            return
+        }
+
+        this.platform.getGameSettings.apply(this.platform, args)
+    }
+
     public gameEnded(fail: boolean, score?: number, level?: number | string, ...args: any[]): void {
         if (null === this.platform) {
             throw new Error(

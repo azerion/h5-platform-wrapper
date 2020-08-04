@@ -12,6 +12,9 @@ var Gawkbox = /** @class */ (function () {
     Gawkbox.prototype.gameStarted = function () {
         return;
     };
+    Gawkbox.prototype.getGameSettings = function () {
+        return null;
+    };
     Gawkbox.prototype.gameEnded = function (fail, score, level) {
         window.postMessage(JSON.stringify({
             event: 'stop',
